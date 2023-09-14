@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
-@RestController
+@Controller
 public class iqsbzController {
     @Autowired
     private IqsbzService iqsbzService;
 
     @GetMapping("/")
     public String main(){
-        return "index";
+        return "iqsbz";
     }
 
     @GetMapping("/iqsbz")
-    public List<Map<String, Object>> iqsbz() {
+    public String iqsbz() {
         List<Map<String, Object>> selectAll = iqsbzService.selectAll();
-        return selectAll;
+        return "iqsbz";
     }
 }
